@@ -24,8 +24,12 @@ class MainHandler(webapp2.RequestHandler):
 
         textarea = "<textarea>" + encrypted_message + "</textarea>"
         submit = "<input type='submit'/>"
-        form = "<form>" + textarea + "<br>" + submit + "</form>"
+        form = "<form method = 'post'>" + textarea + "<br>" + submit + "</form>"
         self.response.write(form)
+
+    def post(self):
+    	self.response.write("Thanks for your submission")
+    	   
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
